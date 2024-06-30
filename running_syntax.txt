@@ -1,0 +1,11 @@
+Adding packages from requirements.txt:
+FROM apache/airflow:2.9.2
+COPY requirements.txt /
+RUN pip install --no-cache-dir "apache-airflow==${AIRFLOW_VERSION}" -r /requirements.txt
+
+Build and Start the Airflow Services:
+Build the Docker image and start the services.
+
+docker-compose down
+docker-compose build
+docker-compose up -d
